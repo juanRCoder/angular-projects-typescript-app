@@ -8,7 +8,7 @@ Es un juego de pensamiento rapido, el cual el usuario podra resolver operaciones
 
 Lo principal es ayudar al usuario a resolver operaciones matematicas rapidas el cual tiene que resolver al comprar un producto, sacar una cuenta de restaurant, entre otras cosas.
 
-WebSite: [https://solvthink.netlify.app](https://solvthink.netlify.app/)
+WebSite: [https://angular-mini-projects.vercel.app/solvthink](https://angular-mini-projects.vercel.app/solvthink)
 
 ## 🛠 Tecnologías:
 Este proyecto fue realizado con las siguientes tecnologias y dependencias:<br/>
