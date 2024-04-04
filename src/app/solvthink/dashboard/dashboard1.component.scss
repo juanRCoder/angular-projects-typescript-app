@@ -1,0 +1,205 @@
+.article-SolvThink {
+  margin: auto;
+  box-sizing: border-box;
+  height: 100vh;
+  background-image: url(../../../assets/bg_solvthink.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.containerSolvThink {
+  padding: 15px;
+  border-radius: 30px;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.4)
+  );
+  @media screen and (max-width: 490px) {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: linear-gradient(
+      45deg,
+      rgb(245 123 123 / 6%),
+      rgb(255 209 209 / 5%)
+    );
+  }
+}
+.titleApp {
+  font-family: Inter;
+  background: linear-gradient(#ff7b8d, #ff007c);
+  background-clip: text;
+  color: transparent;
+  text-align: center;
+  letter-spacing: -5px;
+  font-size: 80px;
+  margin: 20px auto 10px auto;
+  @media screen and (max-width: 490px) {
+    font-size: 80px;
+  }
+}
+.boxOperation {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
+  margin: 10px auto 30px auto;
+  width: 85%;
+  background-color: rgba(255, 255, 255, 0.6509803922);
+  border-radius: 10px;
+  position: relative;
+
+  .num1 {
+    margin-left: 30px;
+  }
+  .num2 {
+    margin-right: 30px;
+  }
+
+  > span {
+    font-family: sans-serif;
+    font-size: 80px;
+    height: 100%;
+    font-weight: 700;
+    color: #fa4961;
+    width: 100%;
+    display: grid;
+    place-items: center;
+  }
+
+  .message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    font-size: 40px;
+    color: #fff;
+    border-radius: 10px;
+  }
+  .messageSuccess {
+    opacity: 1;
+    background-color: #57c34a;
+  }
+  .messageFail {
+    opacity: 1;
+    background-color: #e91e63;
+  }
+  .messageNeutral {
+    opacity: 0;
+    background-color: transparent;
+  }
+}
+.boxOptions {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  margin: 10px auto 10px;
+
+  > button {
+    padding: 10px 0px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-color: #fa4961;
+    color: #fff;
+    height: 36%;
+    font-size: 40px;
+    font-family: sans-serif;
+    font-weight: 700;
+    margin: 0px 0px 20px;
+    cursor: pointer;
+
+    &:active {
+      background-color: #fa4961ad;
+    }
+  }
+}
+.footerContainer {
+  display: flex;
+  width: 85%;
+  margin: 0px auto 30px;
+
+  &_text {
+    font-family: "Inter", sans-serif;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    > p {
+      margin: 0px;
+      font-size: 22px;
+      color: #fa4961;
+    }
+  }
+  > a {
+    width: 20%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    background-color: #fa4961;
+    border-radius: 5px;
+
+    .iconSvg {
+      height: 80%;
+      width: 100%;
+      fill: #fff;
+    }
+
+    &:hover > .iconSvg {
+      filter: drop-shadow(2px 2px 6px #fff);
+    }
+  }
+}
+
+//boxPrincipal
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+//Order de btns
+.firstButton {
+  order: 1;
+}
+.secondButton {
+  order: 2;
+}
+@media screen and (max-width: 350px) {
+  .titleApp {
+    font-size: 60px;
+  }
+  .boxOperation {
+    width: 90%;
+
+    .num1 {
+      margin-left: 20px;
+    }
+    .num2 {
+      margin-right: 20px;
+    }
+
+    > span {
+      font-size: 70px;
+    }
+  }
+  .boxOptions,
+  .boxOptions {
+    width: 90%;
+  }
+}

@@ -1,0 +1,111 @@
+.sectionSolvThink {
+  margin: auto;
+  box-sizing: border-box;
+  height: 100vh;
+  background-image: url(../../../assets/bg_solvthink.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  .configHeader {
+    display: flex;
+    margin: 35px auto 0px;
+    width: 85%;
+
+    > h1 {
+      color: #fa4961;
+      font-family: Inter;
+      width: 80%;
+      font-size: 28px;
+      margin: 0;
+      display: flex;
+      align-items: center;
+    }
+    .return {
+      height: 100%;
+      width: 20%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #fa4961;
+      border-radius: 5px;
+      cursor: pointer;
+
+      .svg {
+        fill: #fff;
+        height: 100%;
+        width: 63%;
+      }
+
+      &:hover > .svg {
+        filter: drop-shadow(2px 2px 6px #fff);
+      }
+    }
+  }
+  .divSolv {
+    padding: 15px;
+    border-radius: 30px;
+    background: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.4)
+    );
+    @media screen and (max-width: 490px) {
+      height: 100%;
+      width: 100%;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background: linear-gradient(
+        45deg,
+        rgb(245 123 123 / 6%),
+        rgb(255 209 209 / 5%)
+      );
+    }
+  }
+  .operatorContainer {
+    width: 85%;
+    margin: 24px auto 24px;
+    display: flex;
+    align-items: center;
+
+    > label {
+      font-family: Inter;
+      width: 40%;
+      color: #333;
+      font-size: 18px;
+    }
+    .select {
+      width: 60%;
+      outline: none;
+      border: none;
+      height: 100%;
+      background-color: #fff9;
+      padding: 0px 20px;
+      border-radius: 5px;
+      font-size: 35px;
+      color: #fa4961;
+
+      option {
+        background-color: rgb(246 73 73 / 20%);
+        cursor: pointer;
+        border: none;
+        outline: none;
+        outline: 1px solid transparent;
+      }
+    }
+  }
+}
+@media screen and (max-width: 350px) {
+  section {
+    .configHeader,
+    .operatorContainer {
+      width: 90%;
+    }
+  }
+}

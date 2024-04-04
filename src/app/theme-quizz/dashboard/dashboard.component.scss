@@ -1,0 +1,210 @@
+.dashboard {
+  font-family: "Inter-Bold", sans-serif;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background: radial-gradient(closest-side, #2a5298 0%, #1e3c72 100%);
+
+  .h1_trivia,
+  h3 {
+    color: #a8cd9f;
+    font-size: 70px;
+    text-align: center;
+    margin: 0px;
+    text-shadow: 0px 4px 4px #0004;
+    max-width: 1400px;
+    @media (max-width: 650px) {
+      font-size: 55px;
+    }
+    @media (max-width: 430px) {
+      font-size: 45px;
+    }
+    @media (max-width: 380px) {
+      font-size: 38px;
+    }
+    @media (max-width: 280px) {
+      font-size: 33px;
+    }
+  }
+  h3 {
+    color: #fff;
+    font-size: 30px;
+    letter-spacing: 1px;
+    padding: 0px;
+    @media (max-width: 650px) {
+      font-size: 25px;
+    }
+    @media (max-width: 320px) {
+      font-size: 17px;
+    }
+  }
+  .category_container {
+    margin: 0 auto;
+    max-width: 1400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5% 0px;
+    @media (max-width: 550px) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 25px;
+      padding: 7% 0px;
+    }
+    @media (max-width: 430px) {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 10% 0px;
+    }
+    @media (max-width: 320px) {
+      grid-template-columns: repeat(2, 1fr);
+      width: 100%;
+      padding: 13% 0px 12%;
+    }
+    @media (max-width: 300px) {
+      grid-gap: 20px;
+    }
+    &_option {
+      max-width: 138px;
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
+      margin-right: 20px;
+      transition: transform 0.3s ease;
+      @media (max-width: 550px) {
+        margin-right: 0px;
+      }
+      @media (max-width: 430px) {
+        max-width: none;
+      }
+      .boxImage {
+        outline: 1px solid #ddd7;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        background-color: #ddd1;
+        > svg {
+          fill: #fff;
+          height: 110px;
+          @media (max-width: 650px) {
+            height: 85px;
+          }
+          @media (max-width: 430px) {
+            height: 90px;
+            width: 100%;
+          }
+        }
+      }
+      .textOption {
+        color: #ffffff;
+        text-align: center;
+        margin: 0px;
+        transition: color -3s ease;
+      }
+      &:hover {
+        transform: scale(1.1);
+      }
+      &:hover > .boxImage {
+        box-shadow: 0 0 10px #ddd7;
+        background-color: #ddd2;
+      }
+      &:hover > .textOption {
+        color: #a8cd9f;
+      }
+    }
+    &_option:nth-child(4) {
+      margin-right: 0px;
+    }
+  }
+  .difficultContainer {
+    margin: 0 auto;
+    max-width: 1400px;
+    > p {
+      color: #a8cd9f;
+      font-size: 35px;
+      margin: 0px;
+      text-align: center;
+      @media (max-width: 650px) {
+        font-size: 30px;
+      }
+      @media (max-width: 320px) {
+        font-size: 26px;
+      }
+    }
+  }
+}
+.radio-buttons-container {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  justify-content: center;
+  padding: 10px 0px;
+  @media (max-width: 430px) {
+    gap: 15px;
+  }
+  @media (max-width: 320px) {
+    gap: 15px;
+    width: 100%;
+    padding: 5% 0px;
+  }
+  @media (max-width: 300px) {
+    gap: 9px;
+    margin: auto;
+  }
+}
+.radio-button {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  &__input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  &__label {
+    display: inline-block;
+    padding-left: 35px;
+    position: relative;
+    font-size: 25px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    @media (max-width: 650px) {
+      font-size: 20px;
+    }
+    @media (max-width: 320px) {
+      font-size: 17px;
+    }
+    @media (max-width: 280px) {
+      font-size: 15px;
+    }
+  }
+  &__custom {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #ddd6;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  &__input:checked + &__label {
+    color: #a8cd9f;
+
+    & .radio-button__custom {
+      transform: translateY(-50%) scale(0.9);
+      border: 5px solid #a8cd9f;
+      color: #a8cd9f;
+    }
+  }
+  &__label:hover .radio-button__custom {
+    transform: translateY(-50%) scale(1.2);
+    border-color: #a8cd9f;
+    box-shadow: 0 0 10px #a8cd9f;
+  }
+}
