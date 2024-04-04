@@ -11,5 +11,5 @@ import { AnimeMangaComponent } from '../anime-manga/anime-manga.component';
   styleUrl: './ciencias.component.scss',
 })
 export class CienciasComponent {
-  cienciasApiUrl: string = 'https://raw.githubusercontent.com/juanRCoder/dataJSON-my-dataBase/main/Theme-Quizz/QZ_scienceNature.json';
+  cienciasApiUrl: string = 'https://raw.githubusercontent.com/juanRCoder/dataBase-juanRCoder/main/Theme-Quizz/QZ_scienceNature.json';
 }

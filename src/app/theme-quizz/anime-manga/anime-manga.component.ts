@@ -15,7 +15,7 @@ import { NgClass } from '@angular/common';
 })
 export class AnimeMangaComponent {
   @Input() title: string = 'Anime/Manga';
-  @Input() apiUrl: string = 'https://raw.githubusercontent.com/juanRCoder/dataJSON-my-dataBase/main/Theme-Quizz/QZ_animeManga.json';
+  @Input() apiUrl: string = '  https://raw.githubusercontent.com/juanRCoder/dataBase-juanRCoder/main/Theme-Quizz/QZ_animeManga.json';
 
   //VARIABLES DE LOGICA
   optionDifficult: string = '';

@@ -11,5 +11,5 @@ import { AnimeMangaComponent } from '../anime-manga/anime-manga.component';
   styleUrl: './general.component.scss'
 })
 export class GeneralComponent {
-  generalApiUrl: string = 'https://raw.githubusercontent.com/juanRCoder/dataJSON-my-dataBase/main/Theme-Quizz/QZ_general.json';
+  generalApiUrl: string = 'https://raw.githubusercontent.com/juanRCoder/dataBase-juanRCoder/main/Theme-Quizz/QZ_general.json';
 }

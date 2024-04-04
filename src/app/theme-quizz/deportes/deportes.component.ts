@@ -11,5 +11,5 @@ import { AnimeMangaComponent } from '../anime-manga/anime-manga.component';
   styleUrl: './deportes.component.scss'
 })
 export class DeportesComponent {
-  deportesApiUrl: string = 'https://raw.githubusercontent.com/juanRCoder/dataJSON-my-dataBase/main/Theme-Quizz/QZ_deportes.json';
+  deportesApiUrl: string = 'https://raw.githubusercontent.com/juanRCoder/dataBase-juanRCoder/main/Theme-Quizz/QZ_deportes.json';
 }
