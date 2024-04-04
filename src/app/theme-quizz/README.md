@@ -4,7 +4,7 @@
 
 Desafía tu conocimiento con una aplicación que presenta una serie de preguntas divididas por dificultad y cuatro categorías principales (¡pronto añadiremos más!). Adivina las respuestas correctas y aprende algo nuevo cada día resolviendo este breve quiz.
 
-WebSite: [https://theme-quiz.netlify.app/](https://theme-quiz.netlify.app/)
+WebSite: [https://angular-mini-projects.vercel.app/theme-quizz](https://angular-mini-projects.vercel.app/theme-quizz)
 
 ## 🛠 Tecnologías:
 Este proyecto fue realizado con las siguientes tecnologias y dependencias:
