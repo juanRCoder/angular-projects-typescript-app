@@ -1,0 +1,22 @@
+.titleProjects {
+  margin: auto;
+  text-align: center;
+  color: #8a0000;
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+.boxProjects {
+  outline: 1px solid white;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  padding: 20px;
+  gap: 25px;
+
+  > button {
+    padding: 8px 20px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+  }
+}

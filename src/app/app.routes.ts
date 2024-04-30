@@ -6,10 +6,11 @@ import { CienciasComponent } from './theme-quizz/ciencias/ciencias.component';
 import { DeportesComponent } from './theme-quizz/deportes/deportes.component';
 import { GeneralComponent } from './theme-quizz/general/general.component';
 import { MiniAppsComponent } from './mini-apps/mini-apps.component';
-
 //solvthink
 import { DashboardComponent1 } from './solvthink/dashboard/dashboard.component';
 import { ConfigurationComponent } from './solvthink/configuration/configuration.component';
+//To-do-list
+import { ToDoListComponent } from './to-do-list/to-do-list.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' },
@@ -25,4 +26,7 @@ export const routes: Routes = [
   //Rutas solvthink
   { path: 'solvthink', component: DashboardComponent1 },
   { path: 'config', component: ConfigurationComponent },
+
+  //Rutas toDoList
+  { path: 'to-do-list', component: ToDoListComponent },
 ];

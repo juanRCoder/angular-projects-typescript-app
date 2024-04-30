@@ -1,0 +1,29 @@
+<h1 class="titleProject-toDoList">To do List</h1>
+<div [formGroup]="task">
+  <div>
+    <label for="title">Title: </label>
+    <input id="title" type="text" formControlName="title" required />
+  </div>
+  <div>
+    <label for="desc">Description: </label>
+    <input id="desc" type="text" formControlName="description" />
+  </div>
+  <button (click)="addTask()">Agregar</button>
+  @if (isbtnUpdate) {
+  <button (click)="updTask()">Actualizar</button>
+  }
+</div>
+<div>
+  @for(task of tasks; track task.id){
+  <div
+    [style.textDecoration]="task.isChecked ? 'line-through' : 'none'"
+    class="taskCard"
+  >
+    <input type="checkbox" [checked]="task.isChecked" (change)="toggleCheckbox(task)" />
+    <h1>{{ task.title }}</h1>
+    <p>{{ task.description }}</p>
+    <button (click)="deleteTask(task.id)">Eliminar</button>
+    <button (click)="updateTask(task.id)">Editar</button>
+  </div>
+  }
+</div>
