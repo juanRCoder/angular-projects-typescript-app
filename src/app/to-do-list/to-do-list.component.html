@@ -1,29 +1,54 @@
-<h1 class="titleProject-toDoList">To do List</h1>
-<div [formGroup]="task">
-  <div>
-    <label for="title">Title: </label>
-    <input id="title" type="text" formControlName="title" required />
-  </div>
-  <div>
-    <label for="desc">Description: </label>
-    <input id="desc" type="text" formControlName="description" />
-  </div>
-  <button (click)="addTask()">Agregar</button>
-  @if (isbtnUpdate) {
-  <button (click)="updTask()">Actualizar</button>
-  }
-</div>
-<div>
-  @for(task of tasks; track task.id){
-  <div
-    [style.textDecoration]="task.isChecked ? 'line-through' : 'none'"
-    class="taskCard"
-  >
-    <input type="checkbox" [checked]="task.isChecked" (change)="toggleCheckbox(task)" />
-    <h1>{{ task.title }}</h1>
-    <p>{{ task.description }}</p>
-    <button (click)="deleteTask(task.id)">Eliminar</button>
-    <button (click)="updateTask(task.id)">Editar</button>
-  </div>
-  }
-</div>
+<main class="main_toDolist">
+  <section class="boxProject_toDoList">
+    <div class="boxProject_toDoList_box1">
+      <h1 class="boxProject_toDoList_box1_title"><i>To-Do-List</i></h1>
+      <div class="boxProject_toDoList_box1_content">
+        <div [formGroup]="task" class="form_content">
+          <input
+            id="title"
+            type="text"
+            formControlName="title"
+            placeholder="Title..."
+            required
+          />
+          <textarea
+            id="desc"
+            formControlName="description"
+            placeholder="Description..."
+            (input)="ajustarAlturaTextarea()"
+          ></textarea>
+          <div class="form_content_btns">
+            <button (click)="addTask()" class="addBtn">Agregar</button>
+            @if (isbtnUpdate) {
+            <button (click)="updTask()" class="uptBtn">Actualizar</button>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="boxProject_toDoList_box2">
+      @for(task of tasks; track task.id){
+      <div
+        [style.textDecoration]="task.isChecked ? 'line-through' : 'none'"
+        class="boxProject_toDoList_box2_taskCard"
+      >
+        <div class="boxProject_toDoList_box2_taskCard_checkTitle">
+          <input
+            type="checkbox"
+            [checked]="task.isChecked"
+            (change)="toggleCheckbox(task)"
+          />
+          <h1>{{ task.title }}</h1>
+        </div>
+        <p class="boxProject_toDoList_box2_taskCard_content">
+          {{ task.description }}
+        </p>
+        <div class="boxProject_toDoList_box2_taskCard_btns">
+          <button (click)="deleteTask(task.id)">Eliminar</button>
+          <button (click)="updateTask(task.id)" class="editar">Editar</button>
+        </div>
+      </div>
+      }
+    </div>
+  </section>
+</main>

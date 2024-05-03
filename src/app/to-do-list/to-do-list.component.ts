@@ -16,7 +16,6 @@ interface Task {
   styleUrl: './to-do-list.component.scss',
 })
 export class ToDoListComponent {
-  
   task = new FormGroup({
     title: new FormControl(''),
     description: new FormControl(''),
@@ -24,7 +23,7 @@ export class ToDoListComponent {
 
   lastId: number = 0;
   tasks: Task[] = [];
-  
+
   //Metodo para agregar una nueva task
   addTask() {
     const titleValue = this.task.get('title')?.value ?? '';
@@ -82,6 +81,16 @@ export class ToDoListComponent {
       this.task.reset();
     } else {
       console.log('Task no encontrado en el array de Tasks');
+    }
+  }
+
+  //Metodo para establecer la altura dinamicamente de la descripcion
+  description: string = '';
+  ajustarAlturaTextarea() {
+    const textarea = document.getElementById('desc');
+    if (textarea) {
+      textarea.style.height = 'auto';
+      textarea.style.height = textarea.scrollHeight + 'px';
     }
   }
 }
