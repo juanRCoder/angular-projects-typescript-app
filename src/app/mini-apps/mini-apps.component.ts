@@ -6,8 +6,12 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [RouterLink],
   templateUrl: './mini-apps.component.html',
-  styleUrl: './mini-apps.component.scss'
+  styleUrl: './mini-apps.component.scss',
 })
 export class MiniAppsComponent {
-
+  apps = [
+    { name: 'Solv-Think', link: '/solvthink', icon: '../../assets/icons/solv-think.webp' },
+    { name: 'Theme-Quizz', link: '/theme-quizz', icon: '../../assets/icons/theme-quizz.webp' },
+    { name: 'To-do-List', link: '/to-do-list', icon: '../../assets/icons/to-do-list.webp' },
+  ];
 }

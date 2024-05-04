@@ -1,6 +1,23 @@
-<h1 class="titleProjects">Angular-mini-Projects</h1>
-<div class="boxProjects">
-  <button><a routerLink="/theme-quizz">Theme-Quizz</a></button>
-  <button><a routerLink="/solvthink">Solvthink</a></button>
-  <button><a routerLink="/to-do-list">To-do-List</a></button>
-</div>
+<section class="miniApps">
+  <header class="header">
+    <img
+      src="../../assets/angular_icon.webp"
+      title="iconAngular"
+      alt="iconAngular.webp"
+    />
+    <h1 class="header_title">Angular-mini-Projects</h1>
+    <img
+      src="../../assets/angular_icon.webp"
+      title="iconAngular"
+      alt="iconAngular.webp"
+    />
+  </header>
+  <main class="mainApp">
+    @for (app of apps; track app.name) {
+    <div routerLink="{{ app.link }}" class="mainApp_container">
+      <img src="{{ app.icon }}" title="{{ app.name }}" alt="{{ app.name }}" />
+      <h2>{{ app.name }}</h2>
+    </div>
+    }
+  </main>
+</section>

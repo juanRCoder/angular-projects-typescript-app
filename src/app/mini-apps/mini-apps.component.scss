@@ -1,22 +1,83 @@
-.titleProjects {
-  margin: auto;
-  text-align: center;
-  color: #8a0000;
-  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
-.boxProjects {
-  outline: 1px solid white;
+.header {
   display: flex;
   justify-content: center;
-  margin: 10px;
-  padding: 20px;
-  gap: 25px;
+  margin: 30px 0;
+  font-family: Inter;
+  background-color: 701120;
 
-  > button {
-    padding: 8px 20px;
-    border-radius: 5px;
-    border: none;
-    outline: none;
+  > img {
+    width: 40px;
+    height: 40px;
+    @media (max-width: 380px) {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  &_title {
+    color: white;
+    margin: auto 25px;
+    font-size: 32px;
+    text-align: center;
+    @media (max-width: 530px) {
+      margin: auto 15px;
+      font-size: 22px;
+    }
+    @media (max-width: 380px) {
+      font-size: 18px;
+      margin: auto 10px;
+    }
+  }
+}
+.mainApp {
+  font-family: Inter;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 35px;
+  margin: 0 20px;
+  @media (max-width: 920px) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px
+  }
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: 530px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 380px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  &_container {
+    background-color: #9e3b41;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    &:hover {
+      transform: scale(1.08);
+    }
+
+    > img {
+      width: 100px;
+      height: 100px;
+      margin: auto;
+      @media (max-width: 1024px) {
+        width: 85px;
+        height: 85px;
+      }
+    }
+    > h2 {
+      color: white;
+      text-align: center;
+      margin: 5px 0 0 0;
+      font-size: 22px;
+      @media (max-width: 1024px) {
+        font-size: 18px;
+      }
+    }
   }
 }
