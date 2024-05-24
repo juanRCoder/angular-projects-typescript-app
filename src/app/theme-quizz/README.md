@@ -1,4 +1,4 @@
-<img src="../../assets/theme_quizz_banner_project.png" alt="Logo"  width="100%">
+<img src="../../assets/themeQuizz/theme_quizz_banner_project.png" alt="Logo"  width="100%">
 
 ## Theme-Quizz: Pon a prueba tu sabiduria
 
@@ -18,8 +18,8 @@ Este proyecto fue realizado con las siguientes tecnologias y dependencias:
 
 - Estos son los diferentes vistas para cualquier dispositivo.
 <div align="center">
-   <img src="../../assets/theme_quizz_mobile_dashboard.png" alt="Logo" width="250" />
-  <img src="../../assets/theme_quizz_laptop_dashboard.png" alt="Logo" width="500" /> 
+   <img src="../../assets/themeQuizz/theme_quizz_mobile_dashboard.png" alt="Logo" width="250" />
+  <img src="../../assets/themeQuizz/theme_quizz_laptop_dashboard.png" alt="Logo" width="500" /> 
 </div>
 
 ## API TRIVIA (categoria anime):

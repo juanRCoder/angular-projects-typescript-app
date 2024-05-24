@@ -1,4 +1,4 @@
-<img src="../../assets/solvthink_banner_project.png" alt="Logo"  width="100%">
+<img src="../../assets/solvthink/solvthink_banner_project.png" alt="Logo"  width="100%">
 
 ## SolvThink: Resuelve/Piensa rapido
 
@@ -20,6 +20,6 @@ Este proyecto fue realizado con las siguientes tecnologias y dependencias:<br/>
 
 - Estos son los diferentes vistas para cualquier dispositivo.
 <div align="center">
-   <img src="../../assets/solvthink_mobile_dashboard.png" alt="Logo" width="250" />
-  <img src="../../assets/solvthink_laptop_dashboard.png" alt="Logo" width="500" /> 
+   <img src="../../assets/solvthink/solvthink_mobile_dashboard.png" alt="Logo" width="250" />
+  <img src="../../assets/solvthink/solvthink_laptop_dashboard.png" alt="Logo" width="500" /> 
 </div>

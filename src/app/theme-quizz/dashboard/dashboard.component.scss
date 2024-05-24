@@ -6,11 +6,10 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  background: radial-gradient(closest-side, #2a5298 0%, #1e3c72 100%);
 
   .h1_trivia,
   h3 {
-    color: #a8cd9f;
+    color: #8cc87d;
     font-size: 70px;
     text-align: center;
     margin: 0px;
@@ -107,11 +106,10 @@
         transform: scale(1.1);
       }
       &:hover > .boxImage {
-        box-shadow: 0 0 10px #ddd7;
         background-color: #ddd2;
       }
       &:hover > .textOption {
-        color: #a8cd9f;
+        color: #8cc87d;
       }
     }
     &_option:nth-child(4) {
@@ -122,7 +120,7 @@
     margin: 0 auto;
     max-width: 1400px;
     > p {
-      color: #a8cd9f;
+      color: #8cc87d;
       font-size: 35px;
       margin: 0px;
       text-align: center;
@@ -194,17 +192,17 @@
     transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
   }
   &__input:checked + &__label {
-    color: #a8cd9f;
+    color: #8cc87d;
 
     & .radio-button__custom {
       transform: translateY(-50%) scale(0.9);
-      border: 5px solid #a8cd9f;
-      color: #a8cd9f;
+      border: 5px solid #8cc87d;
+      color: #8cc87d;
     }
   }
   &__label:hover .radio-button__custom {
     transform: translateY(-50%) scale(1.2);
-    border-color: #a8cd9f;
-    box-shadow: 0 0 10px #a8cd9f;
+    border-color: #8cc87d;
+    box-shadow: 0 0 10px #8cc87d;
   }
 }

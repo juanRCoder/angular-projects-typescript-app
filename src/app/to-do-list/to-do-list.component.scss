@@ -1,7 +1,6 @@
 .main_toDolist {
   display: flex;
-  background-color: #111;
-  max-width: 1350px;
+  max-width: 1440px;
   margin: auto;
 }
 .boxProject_toDoList {
@@ -16,7 +15,8 @@
     font-family: Inter;
     padding-right: 20px;
     margin: 0 0 0 15px;
-    border-right: 1px solid #fff;
+    border-right: 1px solid #fff3;
+    backdrop-filter: blur(10px);
     width: 220px;
     height: 100vh;
     position: sticky;
@@ -28,7 +28,7 @@
       padding-right: 0;
       margin: 0;
       border-right: 0;
-      padding: 0px 20px;
+      padding: 0px 20px 25px 20px;
       position: relative;
     }
 
@@ -118,7 +118,7 @@
     }
 
     &_taskCard {
-      outline: 1px solid #0a6fa7;
+      outline: 1px solid #fff8;
       border-radius: 5px;
       padding: 10px;
       color: #ddd;

@@ -2,9 +2,6 @@
   margin: auto;
   box-sizing: border-box;
   height: 100vh;
-  background-image: url(../../../assets/bg_solvthink.png);
-  background-repeat: no-repeat;
-  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,11 +9,7 @@
 .containerSolvThink {
   padding: 15px;
   border-radius: 30px;
-  background: linear-gradient(
-    45deg,
-    rgba(255, 255, 255, 0.4),
-    rgba(255, 255, 255, 0.4)
-  );
+  background-color: #fff2;
   @media screen and (max-width: 490px) {
     height: 100%;
     width: 100%;
@@ -34,7 +27,7 @@
 }
 .titleApp {
   font-family: Inter;
-  background: linear-gradient(#ff7b8d, #ff007c);
+  background-color: #0d0d18;
   background-clip: text;
   color: transparent;
   text-align: center;
@@ -50,8 +43,8 @@
   grid-template-columns: 1fr 1fr 1fr;
   place-items: center;
   margin: 10px auto 30px auto;
-  width: 85%;
-  background-color: rgba(255, 255, 255, 0.6509803922);
+  width: 95%;
+  background-color: #fff2;
   border-radius: 10px;
   position: relative;
 
@@ -67,7 +60,7 @@
     font-size: 80px;
     height: 100%;
     font-weight: 700;
-    color: #fa4961;
+    color: #0d0d18;
     width: 100%;
     display: grid;
     place-items: center;
@@ -91,11 +84,11 @@
   }
   .messageSuccess {
     opacity: 1;
-    background-color: #57c34a;
+    background-color: #0d0d18;
   }
   .messageFail {
     opacity: 1;
-    background-color: #e91e63;
+    background-color: #180d0e;
   }
   .messageNeutral {
     opacity: 0;
@@ -105,7 +98,7 @@
 .boxOptions {
   display: flex;
   flex-direction: column;
-  width: 85%;
+  width: 95%;
   margin: 10px auto 10px;
 
   > button {
@@ -113,7 +106,7 @@
     border: none;
     outline: none;
     border-radius: 10px;
-    background-color: #fa4961;
+    background-color: #0d0d18;
     color: #fff;
     height: 36%;
     font-size: 40px;
@@ -122,8 +115,8 @@
     margin: 0px 0px 20px;
     cursor: pointer;
 
-    &:active {
-      background-color: #fa4961ad;
+    &:active, &:hover {
+      background-color: #0c0c25;
     }
   }
 }
@@ -142,7 +135,7 @@
     > p {
       margin: 0px;
       font-size: 22px;
-      color: #fa4961;
+      color: #0d0d18;
     }
   }
   > a {
@@ -150,7 +143,6 @@
     height: 100%;
     display: grid;
     place-items: center;
-    background-color: #fa4961;
     border-radius: 5px;
 
     .iconSvg {
@@ -160,7 +152,7 @@
     }
 
     &:hover > .iconSvg {
-      filter: drop-shadow(2px 2px 6px #fff);
+      filter: drop-shadow(0px 0px 2px #fff);
     }
   }
 }

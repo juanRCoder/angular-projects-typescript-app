@@ -15,7 +15,6 @@
   order: 4;
 }
 .section {
-  background: radial-gradient(closest-side, #2a5298 0%, #1e3c72 100%);
   font-family: "Inter-Bold", sans-serif;
   color: #fff;
   height: 100vh;
@@ -29,7 +28,7 @@
     width: 90vw;
   }
   h1 {
-    color: #a8cd9f;
+    color: #8cc87d;
     font-size: 44px;
     text-align: left;
     padding: 0px 0px 20px 0px;
@@ -82,7 +81,7 @@
     }
     &_correct {
       margin: 0px;
-      color: #70de75;
+      color: #8cc87d;
       @media (max-width: 280px) {
         padding: 0px 0px 8px;
       }
@@ -124,8 +123,8 @@
     border: none;
     cursor: pointer;
     &.answerCorrect {
-      background-color: #b0eba2ab;
-      outline: 1px solid #b0eba2;
+      background-color: #8cc87d;
+      outline: 1px solid #8cc87d;
     }
     &.answerIncorrect {
       background-color: #d55151ab;
@@ -133,8 +132,8 @@
     }
   }
   .answerCorrect {
-    background-color: #b0eba2;
-    outline: 1px solid #b0eba2;
+    background-color: #8cc87d;
+    outline: 1px solid #8cc87d;
   }
   .btnDashboard {
     height: 73px;
@@ -154,7 +153,7 @@
         height: 100%;
       }
       &:hover > svg {
-        fill: #a8cd9f;
+        fill: #8cc87d;
       }
     }
   }

@@ -32,11 +32,10 @@
   font-family: Inter;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 35px;
+  gap: 20px;
   margin: 0 20px;
   @media (max-width: 920px) {
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px
   }
   @media (max-width: 768px) {
     grid-template-columns: repeat(3, 1fr);
@@ -49,7 +48,7 @@
   }
 
   &_container {
-    background-color: #9e3b41;
+    background-color: #fff3;
     display: flex;
     flex-direction: column;
     justify-content: center;
