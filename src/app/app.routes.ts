@@ -11,22 +11,22 @@ import { DashboardComponent1 } from './solvthink/dashboard/dashboard.component';
 import { ConfigurationComponent } from './solvthink/configuration/configuration.component';
 //To-do-list
 import { ToDoListComponent } from './to-do-list/to-do-list.component';
+import { TranslateAppComponent } from './translate-app/translate-app.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' },
   { path: '', component: MiniAppsComponent },
 
-  //Rutas: theme-quizz
   { path: 'theme-quizz', component: DashboardComponent },
   { path: 'anime-manga', component: AnimeMangaComponent },
   { path: 'ciencias', component: CienciasComponent },
   { path: 'deportes', component: DeportesComponent },
   { path: 'general', component: GeneralComponent },
 
-  //Rutas solvthink
   { path: 'solvthink', component: DashboardComponent1 },
   { path: 'config', component: ConfigurationComponent },
 
-  //Rutas toDoList
   { path: 'to-do-list', component: ToDoListComponent },
+
+  { path: 'translate-app', component: TranslateAppComponent },
 ];
