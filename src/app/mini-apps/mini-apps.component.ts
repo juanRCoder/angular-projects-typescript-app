@@ -10,8 +10,9 @@ import { RouterLink } from '@angular/router';
 })
 export class MiniAppsComponent {
   apps = [
-    { name: 'Solv-Think', link: '/solvthink', icon: '../../assets/icons/solv-think.webp' },
-    { name: 'Theme-Quizz', link: '/theme-quizz', icon: '../../assets/icons/theme-quizz.webp' },
-    { name: 'To-do-List', link: '/to-do-list', icon: '../../assets/icons/to-do-list.webp' },
+    { name: 'Solv-Think', link: 'solvthink', icon: '../../assets/icons/solv-think.webp' },
+    { name: 'Theme-Quizz', link: 'theme-quizz', icon: '../../assets/icons/theme-quizz.webp' },
+    { name: 'To-do-List', link: 'to-do-list', icon: '../../assets/icons/to-do-list.webp' },
+    { name: 'Translate-app', link: 'translate-app', icon: '../../assets/icons/to-do-list.webp' },
   ];
 }
