@@ -12,7 +12,7 @@ import { Translate } from './translate-app.models';
   templateUrl: './translate-app.component.html',
   styleUrl: './translate-app.component.scss',
 })
-export class TranslateAppComponent  {
+export class TranslateAppComponent {
   //Idiomas actualmente seleccionados en cada bloque
   lng1?: string;
   lng2?: string;
@@ -43,15 +43,15 @@ export class TranslateAppComponent  {
       this.idiomas.block1.en = this.idiomas.block1.es = this.idiomas.block1.fr = '';
 
       if (str === 'es' && this.lng2 !== 'es') {
-        this.idiomas.block1.es = 'gray'; 
+        this.idiomas.block1.es = '#4D5562'; 
         this.sendIdioma1 = 'es';
       }
       if (str === 'en' && this.lng2 !== 'en') {
-        this.idiomas.block1.en = 'gray';
+        this.idiomas.block1.en = '#4D5562';
         this.sendIdioma1 = 'en';
       }
       if (str === 'fr' && this.lng2 !== 'fr') {
-        this.idiomas.block1.fr = 'gray';
+        this.idiomas.block1.fr = '#4D5562';
         this.sendIdioma1 = 'fr';
       }
 
@@ -60,15 +60,15 @@ export class TranslateAppComponent  {
       this.idiomas.block2.en = this.idiomas.block2.es = this.idiomas.block2.fr = '';
         
       if (str === 'es' && this.lng1 !== 'es') {
-        this.idiomas.block2.es = 'gray';
+        this.idiomas.block2.es = '#4D5562';
         this.sendIdioma2 = 'es';
       }
       if (str === 'en' && this.lng1 !== 'en') {
-        this.idiomas.block2.en = 'gray';
+        this.idiomas.block2.en = '#4D5562';
         this.sendIdioma2 = 'en';
       }
       if (str === 'fr' && this.lng1 !== 'fr') {
-        this.idiomas.block2.fr = 'gray';
+        this.idiomas.block2.fr = '#4D5562';
         this.sendIdioma2 = 'fr';
       }
     }
@@ -77,6 +77,7 @@ export class TranslateAppComponent  {
   // Inicializacion de formulario reactivo y servicio http
   formulario!: FormGroup;
   inputText?: string;
+  voiceText?: string;
   outputText?: string;
   constructor(private formBuilder: FormBuilder, private _miServicio: TranslateAppService){
     this.formulario = this.formBuilder.group({
@@ -87,7 +88,6 @@ export class TranslateAppComponent  {
   submit(event: Event) {
     event.preventDefault();
     this.inputText = this.formulario.value.description;
-
     this._miServicio
     .getResult(this.inputText || '', this.sendIdioma1 || '', this.sendIdioma2 || '')
     .subscribe((data: Translate) => {
@@ -113,6 +113,7 @@ export class TranslateAppComponent  {
   cantidadCaracteres: number = 0;
   lengthCharacters(event: Event){
     const caracteres = event.target as HTMLInputElement;
+    this.voiceText = caracteres.value
     
     if (this.cantidadCaracteres >= 100) {
       caracteres.value = caracteres.value.substring(0, 100);
