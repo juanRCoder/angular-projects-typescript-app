@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+
+  &_block {
+    margin: 20px;
+    outline: 3px solid white;
+  }
+}
+span {
+  padding: 0.25rem;
+  display: inline-block;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  color: rgb(255 255 255);
+  user-select: none;
+  cursor: pointer;
+  user-select: none;
+}
+p {
+  color: white;
+}

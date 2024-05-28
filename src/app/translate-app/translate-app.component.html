@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="container_block">
+        <div>
+            <span [ngStyle]="{ 'background-color': idiomas.block1.es }" (click)="seleccionado('es', 1)">Spanish</span>
+            <span [ngStyle]="{ 'background-color': idiomas.block1.en }" (click)="seleccionado('en', 1)">English</span>
+            <span [ngStyle]="{ 'background-color': idiomas.block1.fr }" (click)="seleccionado('fr', 1)">French</span>
+        </div>
+        <form [formGroup]="formulario" (submit)="submit($event)">
+            <textarea id="textarea" formControlName="description" 
+                (input)="lengthCharacters($event)"
+            ></textarea>
+            <button type="submit">Translate</button>
+        </form>
+        <p>{{cantidadCaracteres}}/100</p>
+        <button (click)="voice(inputText)">Voz</button>
+        <button (click)="copyText(inputText)">Copiar</button>
+    </div>
+    <div class="container_block">
+        <span [ngStyle]="{ 'background-color': idiomas.block2.es }" (click)="seleccionado('es', 2)">Spanish</span>
+        <span [ngStyle]="{ 'background-color': idiomas.block2.en }" (click)="seleccionado('en', 2)">English</span>
+        <span [ngStyle]="{ 'background-color': idiomas.block2.fr }" (click)="seleccionado('fr', 2)">French</span>
+        <button (click)="changeLanguage()">Change</button>
+        <p>{{outputText}}</p>
+        <button (click)="voice(outputText)">Voz</button>
+        <button (click)="copyText(outputText)">Copiar</button>
+    </div>
+    @if (showMessage) {
+        <p>{{messageCopy}}</p>
+    }
+</div>
