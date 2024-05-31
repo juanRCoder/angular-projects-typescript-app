@@ -14,7 +14,9 @@
     }
   }
   &_title {
-    color: white;
+    background: linear-gradient(white, #ff5656);
+    -webkit-background-clip: text;
+    color: transparent;  
     margin: auto 25px;
     font-size: 32px;
     text-align: center;
@@ -70,7 +72,7 @@
       }
     }
     > h2 {
-      color: white;
+      color: #ffc7c7;
       text-align: center;
       margin: 5px 0 0 0;
       font-size: 22px;

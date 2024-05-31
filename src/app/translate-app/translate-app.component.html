@@ -1,6 +1,9 @@
 <div class="main">
     <h1><img src="../../assets/translate/logo.svg"/></h1>
     <div class="container">
+        @if (statusError) {
+            <p class="statusError">{{msgError}}</p>
+        }
         <div class="container_block">
             <div class="container_block_languages">
                 <p>Detect Language</p>
@@ -12,14 +15,14 @@
                 <textarea id="textarea" formControlName="description" 
                     (input)="lengthCharacters($event)"
                 ></textarea>
-                <p class="caracteres">{{cantidadCaracteres}}/100</p>
+                <p class="caracteres">{{cantidadCaracteres}}/300</p>
                 <button type="submit">
                     <img src="../../assets/translate/Sort_alfa.svg"/>
                     <p>Translate</p>
                 </button>
             </form>
             <div class="options">
-                <button (click)="voice(inputText || '')">
+                <button (click)="voice(voiceText || '')">
                     <img src="../../assets/translate/sound_max_fill.svg"/>
                 </button>
                 <button (click)="copyText(inputText || '')">
@@ -27,19 +30,21 @@
                 </button>
             </div>
         </div>
+        <div class="cambio">
+            <button class="change" (click)="changeLanguage()">
+                <img src="../../assets/translate/Horizontal_top_left_main.svg"/>
+            </button>
+        </div>
         <div class="container_block">
             <div class="container_block_languages">
                 <p>Detect Language</p>
                 <span [ngClass]="idiomas.block2.es ? 'color_span' : ''" (click)="seleccionado('es', 2)">Spanish</span>
                 <span [ngClass]="idiomas.block2.en ? 'color_span' : ''" (click)="seleccionado('en', 2)">English</span>
                 <span [ngClass]="idiomas.block2.fr ? 'color_span' : ''" (click)="seleccionado('fr', 2)">French</span>
-                <button class="change" (click)="changeLanguage()">
-                    <img src="../../assets/translate/Horizontal_top_left_main.svg"/>
-                </button>
             </div>
             <p class="result">{{outputText}}</p>
             <div class="options_outputs">
-                <button (click)="voice(outputText || '')">
+                <button (click)="voice(voiceText2 || '')">
                     <img src="../../assets/translate/sound_max_fill.svg"/>
                 </button>
                 <button (click)="copyText(outputText || '')">
@@ -48,7 +53,7 @@
             </div>
         </div>
         @if (showMessage) {
-            <p>{{messageCopy}}</p>
+            <p class="msg_copy">{{messageCopy}}</p>
         }
     </div>
 </div>

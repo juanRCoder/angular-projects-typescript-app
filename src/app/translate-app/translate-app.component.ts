@@ -78,6 +78,7 @@ export class TranslateAppComponent {
   formulario!: FormGroup;
   inputText?: string;
   voiceText?: string;
+  voiceText2?: string;
   outputText?: string;
   constructor(private formBuilder: FormBuilder, private _miServicio: TranslateAppService){
     this.formulario = this.formBuilder.group({
@@ -85,7 +86,15 @@ export class TranslateAppComponent {
     })
   }
 
+  msgError: string = 'Selecciona uno de los lenguajes';
+  statusError: boolean = false;
   submit(event: Event) {
+    if (this.lng1 == undefined || this.lng2 == undefined) {
+      setTimeout(() => {
+        this.statusError = false
+      }, 1500);
+      this.statusError = true
+    }
     event.preventDefault();
     this.inputText = this.formulario.value.description;
     this._miServicio
@@ -94,12 +103,14 @@ export class TranslateAppComponent {
       console.log(`Entrada: ${data.matches[0].segment}`);
       console.log(`Salida: ${data.matches[0].translation}`);
       this.outputText = data.matches[0].translation;
+      this.voiceText2 = this.outputText;
     })
   }
 
   // Cambiar el orden de lenguaje segun el bloque
   public changeLanguage() {
     [this.lng1, this.lng2] = [this.lng2, this.lng1];
+    [this.voiceText, this.voiceText2] = [this.outputText, this.inputText];
     this.toggle(this.lng1 || '', 1);
     this.toggle(this.lng2 || '', 2);
   
@@ -115,8 +126,8 @@ export class TranslateAppComponent {
     const caracteres = event.target as HTMLInputElement;
     this.voiceText = caracteres.value
     
-    if (this.cantidadCaracteres >= 100) {
-      caracteres.value = caracteres.value.substring(0, 100);
+    if (this.cantidadCaracteres >= 300) {
+      caracteres.value = caracteres.value.substring(0, 300);
     }
     this.cantidadCaracteres = (caracteres.value).length;
   }

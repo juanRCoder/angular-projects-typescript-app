@@ -13,9 +13,20 @@
 .container {
   display: flex;
   color: white;
+  position: relative;
+  width: 989px;
+
+  @media screen and (max-width: 1000px) {
+    width: 100%;
+  }
+  @media screen and (max-width: 828px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
   &_block {
-    margin: 30px;
+    margin: 20px;
     width: 50%;
     height: 260px;
     padding: 15px 10px 20px 10px;
@@ -24,38 +35,49 @@
     background-color: rgba(33, 41, 54, 0.8);
     font-family: "DM Sans", sans-serif;
 
+    @media screen and (max-width: 828px) {
+      margin: 0;
+      width: 90%;
+      height: 100%;
+    }
+
     &_languages {
       font-weight: bold;
       display: flex;
       font-size: 14px;
       padding: 0px 10px 10px 20px;
-      border-bottom: 0.1rem solid #4D5562;
+      border-bottom: 0.1rem solid #4d5562;
       color: #9b9b9b;
       align-items: center;
 
-        > span, > p {
-          padding: 10px 15px;
-          margin: 0;
-          border-radius: 10px;
-          cursor: pointer;
+      @media screen and (max-width: 1000px) {
+        padding: 10px 5px;
+      }
+
+      > span,
+      > p {
+        padding: 10px 15px;
+        margin: 0;
+        border-radius: 10px;
+        cursor: pointer;
+
+        @media screen and (max-width: 1000px) {
+          padding: 0px 5px;
         }
-        > p {
-          padding-right: 20px;
-          padding-left: 0px;
-        } 
-        > .change {
-          outline: none;
-          background-color: transparent;
-          border: none;
-          padding: 5px 9px;
-          margin: 0 0 0 -82px;
-          position: absolute;
-          cursor: pointer;
-        }
+      }
+      > p {
+        padding-right: 20px;
+        padding-left: 0px;
+      }
     }
     .result {
       margin: 15px 0 0 15px;
-      height: 14%;  
+      height: 124px;
+      width: 398px;
+
+      @media screen and (max-width: 1000px) {
+        width: 100%;
+      }
     }
     > form {
       height: 60%;
@@ -63,14 +85,23 @@
       > textarea {
         font-family: "DM Sans", sans-serif;
         background-color: transparent;
-        width: 95%;
-        height: 80%;
+        width: 376px;
+        height: 124px;
         resize: none;
         border: none;
         font-size: 17px;
-        color: #F9FAFB;
+        color: #f9fafb;
         padding: 15px 15px 0 15px;
         outline: none;
+
+        @media screen and (max-width: 1000px) {
+          width: 100%;
+          height: 135px;
+        }
+        @media screen and (max-width: 828px) {
+          width: 96%;
+          height: 72px;
+        }
       }
       > .caracteres {
         color: #a9aaab;
@@ -80,13 +111,12 @@
         padding-right: 15px;
       }
       > button {
-        background-color: #3662E3;
+        background-color: #3662e3;
         display: flex;
         align-items: center;
         text-align: right;
-        position: relative;
-        left: 268px;
-        top: 12px;
+        float: right;
+        margin: 11px 10px 0 0px;
         border: none;
         outline: none;
         padding: 9px 20px;
@@ -103,10 +133,18 @@
         }
       }
     }
-    > .options, .options_outputs {
+    > .options,
+    .options_outputs {
       display: flex;
       gap: 13px;
       margin: 20px 0 0 15px;
+
+      @media screen and (max-width: 1000px) {
+        margin: 31px 0px 0px 8px;
+      }
+      @media screen and (max-width: 828px) {
+        margin: 5px 0px 0px 8px;
+      }
 
       > button {
         background-color: transparent;
@@ -122,14 +160,69 @@
     }
     > .options_outputs {
       position: relative;
-      top: 123px;
+      top: 38px;
       margin: 0;
       left: 13px;
+
+      @media screen and (max-width: 828px) {
+        top: 11px;
+        left: 8px;
+      }
     }
+  }
+
+  .msg_copy {
+    position: absolute;
+    bottom: -55px;
+    left: 32px;
+    background-color: #3662e3;
+    font-family: Inter;
+    padding: 17px 12px;
+    border-radius: 15px;
+
+    @media screen and (max-width: 828px) {
+      bottom: -3px;
+      left: 217px;
+    }
+  }
+  .statusError {
+    position: absolute;
+    color: #e0484d;
+    font-family: Inter;
+    top: -14px;
+    left: 33px;
   }
 }
 
 .color_span {
-  background-color: #4D5562;
-  color: #F9FAFB;
+  background-color: #4d5562;
+  color: #f9fafb;
+}
+
+.cambio {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  top: 24px;
+  display: flex;
+  background-color: #7fffd455;
+  height: 86%;
+  border-radius: 10px;
+  align-items: center;
+
+  @media screen and (max-width: 828px) {
+    width: 93%;
+    text-align: center;
+    margin: 5px 0;
+    justify-content: center;
+    top: 0;
+  }
+
+  .change {
+    outline: none;
+    background-color: transparent;
+    border: none;
+    padding: 5px 5px;
+    cursor: pointer;
+  }
 }
