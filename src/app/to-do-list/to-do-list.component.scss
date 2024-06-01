@@ -36,7 +36,8 @@
       font-size: 2.25rem;
       line-height: 1.75rem;
       margin: 0;
-      color: #0a6fa7;
+      color: #d5297f;
+      text-shadow: 0 0 10px #d5297f;
       padding-top: 1.5rem;
       padding-bottom: 25px;
       @media screen and (max-width: 768px) {
@@ -78,20 +79,20 @@
           cursor: pointer;
           border: none;
           outline: none;
-          background-color: #0a6fa7;
+          background-color: #a7145d;
           color: #ddd;
           border-radius: 5px;
           transition: background-color 0.3s, text-shadow 0.3s;
           &:hover {
-            background-color: #0880c3;
+            background-color: #d5297f;
             text-shadow: 0 0 15px;
           }
         }
         .uptBtn {
-          background-color: #0aa77c;
+          background-color: #ff1589;
           color: #ddd;
           &:hover {
-            background-color: #11c191;
+            background-color: #dc0771;
             text-shadow: 0 0 15px;
           }
         }
@@ -118,7 +119,7 @@
     }
 
     &_taskCard {
-      outline: 1px solid #fff8;
+      outline: 1px solid #ff007f;
       border-radius: 5px;
       padding: 10px;
       color: #ddd;
@@ -153,13 +154,19 @@
           border-radius: 5px;
           border: none;
           outline: none;
-          background-color: #c33f3f;
+          background-color: #9d0b54;
           color: #fff;
           cursor: pointer;
+          &:hover{
+            text-shadow: 0 0 4px;
+          }
         }
         .editar {
-          background-color: #1e75a5;
+          background-color: #ff005e;
           color: #fff;
+          &:hover{
+            text-shadow: 0 0 4px;
+          }
         }
       }
     }

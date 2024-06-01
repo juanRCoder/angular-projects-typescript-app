@@ -28,12 +28,12 @@
     width: 90vw;
   }
   h1 {
-    color: #8cc87d;
+    color: #ff299f;
+    text-shadow: 0px 0px 35px #ef63b0;
     font-size: 44px;
     text-align: left;
     padding: 0px 0px 20px 0px;
     margin: 0px;
-    text-shadow: 0px 4px 4px #0004;
     @media (max-width: 520px) {
       font-size: 34px;
     }
@@ -123,11 +123,11 @@
     border: none;
     cursor: pointer;
     &.answerCorrect {
-      background-color: #8cc87d;
+      background-color: #61b94b;
       outline: 1px solid #8cc87d;
     }
     &.answerIncorrect {
-      background-color: #d55151ab;
+      background-color: #ba1919ab;
       outline: 1px solid #d55151;
     }
   }
@@ -153,7 +153,7 @@
         height: 100%;
       }
       &:hover > svg {
-        fill: #8cc87d;
+        fill: #ff299f;
       }
     }
   }

@@ -8,6 +8,7 @@
   > h1 {
     margin: 0;
     transform: scale(1.5);
+    filter: drop-shadow(2px 2px 6px #d2366d);
   }
 }
 .container {
@@ -31,8 +32,8 @@
     height: 260px;
     padding: 15px 10px 20px 10px;
     border-radius: 20px;
-    border: 1px solid #4a4d51;
-    background-color: rgba(33, 41, 54, 0.8);
+    border: 1px solid #ddd;
+    background-color: #f16ebd1a;
     font-family: "DM Sans", sans-serif;
 
     @media screen and (max-width: 828px) {
@@ -46,8 +47,8 @@
       display: flex;
       font-size: 14px;
       padding: 0px 10px 10px 20px;
-      border-bottom: 0.1rem solid #4d5562;
-      color: #9b9b9b;
+      border-bottom: 0.1rem solid #ddd;
+      color: #ddd;
       align-items: center;
 
       @media screen and (max-width: 1000px) {
@@ -90,7 +91,7 @@
         resize: none;
         border: none;
         font-size: 17px;
-        color: #f9fafb;
+        color: #dddddd;
         padding: 15px 15px 0 15px;
         outline: none;
 
@@ -104,14 +105,14 @@
         }
       }
       > .caracteres {
-        color: #a9aaab;
+        color: #dddddd;
         font-size: 12px;
         margin: 0;
         text-align: right;
         padding-right: 15px;
       }
       > button {
-        background-color: #3662e3;
+        background-color: #d2366d;
         display: flex;
         align-items: center;
         text-align: right;
@@ -122,6 +123,13 @@
         padding: 9px 20px;
         border-radius: 11px;
         cursor: pointer;
+        transition-property: box-shadow, text-shadow;
+        transition-duration: .2s;
+        transition-timing-function: cubic-bezier();
+        &:hover {
+          box-shadow: 0 0 10px #d2366d;
+          text-shadow: 0 0 14px;
+        }
 
         > p {
           color: #fff;
@@ -149,7 +157,7 @@
       > button {
         background-color: transparent;
         outline: none;
-        border: 2px solid #777;
+        border: 2px solid #dddddd;
         border-radius: 12px;
         padding: 5px 7px;
         cursor: pointer;
@@ -173,9 +181,10 @@
 
   .msg_copy {
     position: absolute;
-    bottom: -55px;
-    left: 32px;
-    background-color: #3662e3;
+    bottom: -70px;
+    left: 16px;
+    background-color: #d2366d;
+    text-shadow: 0 0 10px;
     font-family: Inter;
     padding: 17px 12px;
     border-radius: 15px;
@@ -189,26 +198,30 @@
     position: absolute;
     color: #e0484d;
     font-family: Inter;
-    top: -14px;
+    top: -26px;
     left: 33px;
+
   }
 }
 
 .color_span {
-  background-color: #4d5562;
-  color: #f9fafb;
+  background-color: #d2366d88;
+  color: #dddddd;
 }
 
 .cambio {
   position: relative;
   width: 30px;
-  height: 30px;
   top: 24px;
   display: flex;
-  background-color: #7fffd455;
+  background-color: #ff7f7f54;
   height: 86%;
   border-radius: 10px;
   align-items: center;
+  transition: transform .2s ease;
+  &:hover {
+    transform: scale(1.05);
+  }
 
   @media screen and (max-width: 828px) {
     width: 93%;

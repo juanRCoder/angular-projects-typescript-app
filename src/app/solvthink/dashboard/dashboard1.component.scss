@@ -9,7 +9,7 @@
 .containerSolvThink {
   padding: 15px;
   border-radius: 30px;
-  background-color: #fff2;
+  background-color: #ffffff21;
   @media screen and (max-width: 490px) {
     height: 100%;
     width: 100%;
@@ -27,7 +27,8 @@
 }
 .titleApp {
   font-family: Inter;
-  background-color: #0d0d18;
+  background-color: #ff60b8;
+  text-shadow: 0 0 24px #f90c82;
   background-clip: text;
   color: transparent;
   text-align: center;
@@ -60,7 +61,8 @@
     font-size: 80px;
     height: 100%;
     font-weight: 700;
-    color: #0d0d18;
+    color: #ccc;
+    text-shadow: 4px 4px #777;
     width: 100%;
     display: grid;
     place-items: center;
@@ -84,11 +86,11 @@
   }
   .messageSuccess {
     opacity: 1;
-    background-color: #0d0d18;
+    background-color: #fb4cad;
   }
   .messageFail {
     opacity: 1;
-    background-color: #180d0e;
+    background-color: #fb4cad;
   }
   .messageNeutral {
     opacity: 0;
@@ -106,8 +108,10 @@
     border: none;
     outline: none;
     border-radius: 10px;
-    background-color: #0d0d18;
+    background-color: #d93a75;
+    box-shadow: 0 0 9px 1px #ff168a;
     color: #fff;
+    text-shadow: 0 0 4px;
     height: 36%;
     font-size: 40px;
     font-family: sans-serif;
@@ -116,7 +120,7 @@
     cursor: pointer;
 
     &:active, &:hover {
-      background-color: #0c0c25;
+      background-color: #e34681;
     }
   }
 }
@@ -135,7 +139,9 @@
     > p {
       margin: 0px;
       font-size: 22px;
-      color: #0d0d18;
+      color: #ddd;
+      font-weight: 600;
+      text-shadow: 1px 1px #777;
     }
   }
   > a {

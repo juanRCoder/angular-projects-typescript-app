@@ -13,7 +13,8 @@
     width: 85%;
 
     > h1 {
-      color: #0d0d18;
+      color: #ff60b8;
+      text-shadow: 0 0 24px #f90c82;
       font-family: Inter;
       width: 80%;
       font-size: 28px;
@@ -31,19 +32,20 @@
       cursor: pointer;
 
       .svg {
-        fill: #0d0d18;
+        fill: #e34ea0;
         height: 100%;
         width: 63%;
       }
 
       &:hover > .svg {
-        filter: drop-shadow(2px 2px 6px #fff);
+        filter: drop-shadow(2px 2px 14px #cf3d8d);
       }
     }
   }
   .divSolv {
     border-radius: 30px;
-    background: #fff2;
+    background-color: #ffffff21;
+
     @media screen and (max-width: 490px) {
       height: 100%;
       width: 100%;
@@ -67,7 +69,8 @@
     > label {
       font-family: Inter;
       width: 40%;
-      color: #0d0d18;
+      color: #ff5978;
+      text-shadow: 0 0 13px;
       font-size: 24px;
       font-weight: bolder;
     }
@@ -76,11 +79,11 @@
       outline: none;
       border: none;
       height: 100%;
-      background-color: #fff3;
+      background-color: #ff3f9f4a;
       padding: 0px 16px;
       border-radius: 5px;
       font-size: 35px;
-      color: #0d0d18;
+      color: #ff5978;
 
       option {
         background-color: rgb(246 73 73 / 20%);

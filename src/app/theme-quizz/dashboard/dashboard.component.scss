@@ -9,11 +9,11 @@
 
   .h1_trivia,
   h3 {
-    color: #8cc87d;
+    color: #ff299f;
     font-size: 70px;
     text-align: center;
     margin: 0px;
-    text-shadow: 0px 4px 4px #0004;
+    text-shadow: 0px 0px 22px #ef63b0;
     max-width: 1400px;
     @media (max-width: 650px) {
       font-size: 55px;
@@ -30,6 +30,7 @@
   }
   h3 {
     color: #fff;
+    text-shadow: 3px 2px #777;
     font-size: 30px;
     letter-spacing: 1px;
     padding: 0px;
@@ -106,10 +107,11 @@
         transform: scale(1.1);
       }
       &:hover > .boxImage {
-        background-color: #ddd2;
+        outline: 1px solid #ff299f;
+        background-color: #ff299f22;
       }
       &:hover > .textOption {
-        color: #8cc87d;
+        color: #f7b6da;
       }
     }
     &_option:nth-child(4) {
@@ -120,7 +122,8 @@
     margin: 0 auto;
     max-width: 1400px;
     > p {
-      color: #8cc87d;
+      color: #ff299f;
+      text-shadow: 0px 0px 15px #ef63b0;
       font-size: 35px;
       margin: 0px;
       text-align: center;
@@ -192,17 +195,18 @@
     transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
   }
   &__input:checked + &__label {
-    color: #8cc87d;
+    color: #ff219c;
+    text-shadow: 0 0 10px;
 
     & .radio-button__custom {
       transform: translateY(-50%) scale(0.9);
-      border: 5px solid #8cc87d;
-      color: #8cc87d;
+      border: 5px solid #ff219c;
+      box-shadow: 0 0 19px;
     }
   }
   &__label:hover .radio-button__custom {
     transform: translateY(-50%) scale(1.2);
-    border-color: #8cc87d;
-    box-shadow: 0 0 10px #8cc87d;
+    border: 2px solid #e97ab7;
+    box-shadow: 0 0 19px;
   }
 }
