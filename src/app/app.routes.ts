@@ -22,11 +22,8 @@ export const routes: Routes = [
   { path: 'ciencias', component: CienciasComponent },
   { path: 'deportes', component: DeportesComponent },
   { path: 'general', component: GeneralComponent },
-
   { path: 'solvthink', component: DashboardComponent1 },
   { path: 'config', component: ConfigurationComponent },
-
   { path: 'to-do-list', component: ToDoListComponent },
-
   { path: 'translate-app', component: TranslateAppComponent },
 ];
