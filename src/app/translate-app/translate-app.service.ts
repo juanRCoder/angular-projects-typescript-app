@@ -9,7 +9,6 @@ import { Translate } from './translate-app.models';
 export class TranslateAppService {
 
   private http = inject(HttpClient)
-
   
   private urlBase = 'https://api.mymemory.translated.net/get';
 

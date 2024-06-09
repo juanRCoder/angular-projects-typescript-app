@@ -6,16 +6,15 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-
+  background-color: #68073d;
   .configHeader {
     display: flex;
-    margin: 20px auto 0px;
+    margin: 20px auto 0;
     width: 85%;
-
     > h1 {
       color: #ff60b8;
       text-shadow: 0 0 24px #f90c82;
-      font-family: Inter;
+      font-family: Inter, sans-serif;
       width: 80%;
       font-size: 28px;
       margin: 0;
@@ -30,13 +29,11 @@
       align-items: center;
       border-radius: 5px;
       cursor: pointer;
-
-      .svg {
+      > .svg {
         fill: #e34ea0;
         height: 100%;
         width: 63%;
       }
-
       &:hover > .svg {
         filter: drop-shadow(2px 2px 14px #cf3d8d);
       }
@@ -45,7 +42,6 @@
   .divSolv {
     border-radius: 30px;
     background-color: #ffffff21;
-
     @media screen and (max-width: 490px) {
       height: 100%;
       width: 100%;
@@ -55,8 +51,8 @@
       flex-direction: column;
       background: linear-gradient(
         45deg,
-        rgb(245 123 123 / 6%),
-        rgb(255 209 209 / 5%)
+        rgba(245, 123, 123, 0.06),
+        rgba(255, 209, 209, 0.05)
       );
     }
   }
@@ -65,9 +61,8 @@
     margin: 5px auto 20px;
     display: flex;
     align-items: center;
-
-    > label {
-      font-family: Inter;
+    label {
+      font-family: Inter, sans-serif;
       width: 40%;
       color: #ff5978;
       text-shadow: 0 0 13px;
@@ -78,25 +73,22 @@
       width: 60%;
       outline: none;
       border: none;
-      height: 100%;
       background-color: #ff3f9f4a;
-      padding: 0px 16px;
+      padding: 0 16px;
       border-radius: 5px;
       font-size: 35px;
       color: #ff5978;
-
       option {
-        background-color: rgb(246 73 73 / 20%);
+        background-color: rgba(246, 73, 73, 0.2);
         cursor: pointer;
         border: none;
         outline: none;
-        outline: 1px solid transparent;
       }
     }
   }
 }
 @media screen and (max-width: 350px) {
-  section {
+  .sectionSolvThink {
     .configHeader,
     .operatorContainer {
       width: 90%;

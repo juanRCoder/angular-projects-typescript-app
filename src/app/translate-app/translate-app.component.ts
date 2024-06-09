@@ -4,7 +4,6 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { TranslateAppService } from './translate-app.service';
 import { Translate } from './translate-app.models';
 
-
 @Component({
   selector: 'app-translate-app',
   standalone: true,

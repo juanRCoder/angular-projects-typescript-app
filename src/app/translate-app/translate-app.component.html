@@ -11,7 +11,7 @@
                 <span [ngClass]="idiomas.block1.fr ? 'color_span' : ''" (click)="seleccionado('fr', 1)">French</span>
                 <span [ngClass]="idiomas.block1.es ? 'color_span' : ''" (click)="seleccionado('es', 1)">Spanish</span>
             </div>
-            <form [formGroup]="formulario" (submit)="submit($event)">
+            <form class="formulario" [formGroup]="formulario" (submit)="submit($event)">
                 <textarea id="textarea" formControlName="description" 
                     (input)="lengthCharacters($event)"
                 ></textarea>

@@ -15,4 +15,7 @@ export class MiniAppsComponent {
     { name: 'To-do-List', link: 'to-do-list', icon: '../../assets/icons/to-do-list.webp' },
     { name: 'Translate-app', link: 'translate-app', icon: '../../assets/icons/translate-app.webp' },
   ];
+  pages = [
+    { name: '??', link: '??', icon: '../../assets/icons/solv-think.webp' },
+  ];
 }
