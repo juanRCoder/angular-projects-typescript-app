@@ -4,9 +4,6 @@
   display: flex;
   align-items: center;
   height: 100vh;
-  @media (max-width: 380px) {
-    height: 100%;
-  }
   > .block1 {
     width: 100%;
     max-width: 1360px;

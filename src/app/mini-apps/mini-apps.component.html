@@ -11,7 +11,6 @@
     <div class="mainApp">
       @for (app of apps; track app.name) {
       <div routerLink="{{ app.link }}" class="mainApp_container">
-        <img src="{{ app.icon }}" title="{{ app.name }}" alt="{{ app.name }}" />
         <h2>{{ app.name }}</h2>
       </div>
       }
@@ -29,7 +28,6 @@
     <div class="mainApp">
       @for (page of pages; track page.name) {
       <div routerLink="{{ page.link }}" class="mainApp_container">
-        <img src="{{ page.icon }}" title="{{ page.name }}" alt="{{ page.name }}" />
         <h2>{{ page.name }}</h2>
       </div>
       }
