@@ -1,11 +1,79 @@
-<form class="h-full p-5">
-  <div>
-    <label class="text-white pr-5">Ingreso</label>
-    <input class="bg-white/5 outline-1 outline-slate-200" />
-  </div>
-  <div class="pt-2">
-    <label class="text-white pr-5">Gasto</label>
-    <input class="bg-white/5 outline-1 outline-slate-200" />
-  </div>
-  <button class="bg-slate-400 rounded-lg outline-none text-white mt-2 p-1 px-4">Calcular</button>
+<form
+  [formGroup]="formulario"
+  (ngSubmit)="onSubmit()"
+  class="h-full p-5 text-white"
+>
+  <h1>INGRESOS</h1>
+  <section>
+    <div class="mb-5">
+      <label class="text-white pr-5">Mensual</label>
+      <input
+        class="bg-white/5 outline-none border-none"
+        type="number"
+        formControlName="mensual"
+      />
+    </div>
+    <div formArrayName="ingresos">
+      @for (input of ingresos().controls; track input; let i= $index) {
+      <div [formGroupName]="i" class="mb-5">
+        <input
+          class="placeholder:text-slate-600 mr-10 mb-5 text-white pr-5 bg-slate-600"
+          formControlName="newIngreso"
+          type="text"
+          placeholder="nuevo ingreso"
+        />
+        <input class="text-black" formControlName="newValor" type="number" />
+        <button class="ml-4 py-2 px-4 bg-red-400" (click)="removeIngreso(i)">
+          -
+        </button>
+      </div>
+      }
+    </div>
+    <div>
+      <button type="button" (click)="addIngreso()">Add Ingreso</button>
+    </div>
+  </section>
+  <br />
+  <h1>GASTOS</h1>
+  <section>
+    <div class="mb-5">
+      <label class="text-white pr-5">insumos Diarios</label>
+      <input
+        class="bg-white/5 outline-none border-none"
+        type="number"
+        formControlName="insumoDiario"
+      />
+    </div>
+    <div formArrayName="gastos">
+      @for (input of gastos().controls; track input; let i= $index) {
+      <div [formGroupName]="i" class="mb-5">
+        <input
+          class="placeholder:text-slate-600 mr-10 mb-5 text-white pr-5 bg-slate-600"
+          formControlName="newGasto"
+          type="text"
+          placeholder="nuevo ingreso"
+        />
+        <input class="text-black" formControlName="newValor" type="number" />
+        <button class="ml-4 py-2 px-4 bg-red-400" (click)="removeGasto(i)">
+          -
+        </button>
+      </div>
+      }
+    </div>
+    <div>
+      <button type="button" (click)="addGasto()">Add Gasto</button>
+    </div>
+  </section>
+
+  <button class="bg-slate-400 rounded-lg outline-none text-white mt-2 p-1 px-4">
+    Calcular
+  </button>
 </form>
+@if (showChart) {
+<app-grafico
+  [labelsOfIngresos]="labelsIngresos"
+  [valuesOfIngresos]="valuesIngresos"
+  [labelsOfGastos]="labelsGastos"
+  [valuesOfGastos]="valuesGastos"
+></app-grafico>
+}
