@@ -7,6 +7,19 @@ import {
 } from '@angular/forms';
 import { GraficoComponent } from './grafico/grafico.component';
 
+interface typeData {
+  ingresos: {
+    label: string[];
+    value: number[];
+    suma: number
+  };
+  gastos: {
+    label: string[];
+    value: number[];
+    suma: number
+  };
+}
+
 @Component({
   selector: 'app-calculo-financiero',
   standalone: true,
@@ -16,12 +29,11 @@ import { GraficoComponent } from './grafico/grafico.component';
 })
 export class CalculoFinancieroComponent {
   private fb = inject(FormBuilder);
-  labelsIngresos?: string[];
-  valuesIngresos?: number[];
-
-  labelsGastos?: string[];
-  valuesGastos?: number[];
-
+  data: typeData = {
+    ingresos: { label: [], value: [], suma: 0},
+    gastos: { label: [], value: [], suma: 0 },
+  };
+  resultEnd?: number;
   showChart?: boolean = false;
 
   formulario: FormGroup = this.fb.group({
@@ -37,7 +49,6 @@ export class CalculoFinancieroComponent {
   gastos(): FormArray {
     return this.formulario.get('gastos') as FormArray;
   }
-  
 
   addIngreso() {
     const addIngreso = this.fb.group({
@@ -54,51 +65,55 @@ export class CalculoFinancieroComponent {
     this.gastos().push(addGasto);
   }
 
+  private process(
+    array: FormArray,
+    newLabel: string,
+    newValue: string,
+    labelStatic: string
+  ) {
+    let labels: string[] = [];
+    let values: number[] = [];
+
+    array.controls.forEach((ingresoGroup) => {
+      let label = ingresoGroup.get(newLabel);
+      let value = ingresoGroup.get(newValue);
+
+      labels.push(label?.value);
+      values.push(parseFloat(value?.value));
+    });
+
+    values.push(this.formulario.get(labelStatic)?.value);
+    labels.push(labelStatic);
+    return { labels, values };
+  }
   onSubmit() {
     // INGRESOS
     const ingresosArray = this.formulario.get('ingresos') as FormArray;
-
-    let labelsOfIngresos: string[] = [];
-    let valuesOfIngresos: number[] = [];
-    let sumValuesOfIngresos: number = 0;
-
-    // ITERAR SOBRE LOS VALORES DEL ARRAY DE INGRESOS
-    ingresosArray.controls.forEach((ingresoGroup) => {
-      const newLabels = ingresoGroup.get('newIngreso');
-      const newValues = ingresoGroup.get('newValor');
-
-      sumValuesOfIngresos += newValues?.value;
-      labelsOfIngresos.push(newLabels?.value);
-      valuesOfIngresos.push(newValues?.value);
-    });
-    valuesOfIngresos.push(this.formulario.get('mensual')?.value);
-    labelsOfIngresos.push('mensual');
-    this.labelsIngresos = labelsOfIngresos;
-    this.valuesIngresos = valuesOfIngresos;
-    console.log(labelsOfIngresos);
-
-    // GASTOS
     const gastosArray = this.formulario.get('gastos') as FormArray;
 
-    let labelsOGastos: string[] = [];
-    let valuesOfGasto: number[] = [];
-    let sumValuesOfGasto: number = 0;
+    const ingreso = this.process(
+      ingresosArray,
+      'newIngreso',
+      'newValor',
+      'mensual'
+    );
+    this.data.ingresos.label = ingreso.labels;
+    this.data.ingresos.value = ingreso.values;
+    this.data.ingresos.suma = ingreso.values.reduce((acml, x) => acml + x)
 
-    // ITERAR SOBRE LOS VALORES DEL ARRAY DE GASTOS
-    gastosArray.controls.forEach((gastoGroup) => {
-      const newLabels = gastoGroup.get('newGasto');
-      const newValues = gastoGroup.get('newValor');
+    const gasto = this.process(
+      gastosArray,
+      'newGasto',
+      'newValor',
+      'insumoDiario'
+    );
+    this.data.gastos.label = gasto.labels;
+    this.data.gastos.value = gasto.values;
+    this.data.gastos.suma = gasto.values.reduce((acml, x) => acml + x)
 
-      sumValuesOfGasto += newValues?.value;
-      labelsOGastos.push(newLabels?.value);
-      valuesOfGasto.push(newValues?.value);
-    });
-
-    valuesOfGasto.push(this.formulario.get('insumoDiario')?.value);
-    labelsOGastos.push('insumoDiario');
-    this.labelsGastos = labelsOGastos;
-    this.valuesGastos = valuesOfGasto;
-    console.log(labelsOfIngresos);
+    this.resultEnd = this.data.ingresos.suma - this.data.gastos.suma;
+    console.log( this.data.ingresos.suma)
+    console.log( this.data.gastos.suma)
 
     this.showChart = true;
   }

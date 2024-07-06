@@ -66,14 +66,15 @@
   </section>
 
   <button class="bg-slate-400 rounded-lg outline-none text-white mt-2 p-1 px-4">
-    Calcular
+    Resultados
   </button>
 </form>
 @if (showChart) {
 <app-grafico
-  [labelsOfIngresos]="labelsIngresos"
-  [valuesOfIngresos]="valuesIngresos"
-  [labelsOfGastos]="labelsGastos"
-  [valuesOfGastos]="valuesGastos"
+  [labelsOfIngresos]="data.ingresos.label"
+  [valuesOfIngresos]="data.ingresos.value"
+  [labelsOfGastos]="data.gastos.label"
+  [valuesOfGastos]="data.gastos.value"
+  [resultadoEnd]="this.resultEnd"
 ></app-grafico>
 }

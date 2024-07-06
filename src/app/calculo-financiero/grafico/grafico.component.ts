@@ -1,4 +1,10 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  input,
+  Input,
+  OnChanges,
+  SimpleChanges,
+} from '@angular/core';
 import Chart from 'chart.js/auto';
 
 @Component({
@@ -13,35 +19,46 @@ export class GraficoComponent implements OnChanges {
   @Input() valuesOfIngresos?: number[];
   @Input() labelsOfGastos?: string[];
   @Input() valuesOfGastos?: number[];
-  // @Input() sumIngresos?: number;
-  private chart?: Chart | any;
-  private chart2?: Chart | any;
+
+  @Input() resultadoEnd?: number;
+  private chartCircle?: Chart | any;
+  private chartBar?: Chart | any;
+
+  ingressTotal?: number;
+  gastossTotal?: number;
 
   // Detecta cambios en las propiedades de entrada 'labels' o 'values'
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['labelsOfIngresos'] || changes['valuesOfIngresos'] || changes['labelsOfGastos'] || changes['valuesOfGastos']) {
-      this.updateChart();
-      this.updateChart2();
+    if (
+      changes['labelsOfIngresos'] ||
+      changes['valuesOfIngresos'] ||
+      changes['labelsOfGastos'] ||
+      changes['valuesOfGastos']
+    ) {
+      this.updateChartCircle();
+      this.updateChartBar();
     }
   }
-  private updateChart() {
-    if (this.chart) {
-      this.chart.destroy();
+  private updateChartCircle() {
+    if (this.chartCircle) {
+      this.chartCircle.destroy();
     }
+    this.ingressTotal = this.valuesOfIngresos?.reduce((acml, x) => acml + x)
+    this.gastossTotal = this.valuesOfGastos?.reduce((acml, x) => acml + x)
 
-    const ctx = document.getElementById('graficoIngresos') as HTMLCanvasElement;
-    this.chart = new Chart(ctx, {
+    const ctx = document.getElementById('graficoCircle') as HTMLCanvasElement;
+    this.chartCircle = new Chart(ctx, {
       type: 'doughnut',
       data: {
-        labels: this.labelsOfIngresos,
+        labels: ['ingresos', 'gastos', 'ahorro'],
         datasets: [
           {
-            label: 'Ingresos',
-            data: this.valuesOfIngresos,
+            label: 'general',
+            data: [this.ingressTotal, this.gastossTotal, this.resultadoEnd],
             backgroundColor: [
-              'rgb(255, 99, 132)',
-              'rgb(54, 162, 235)',
-              'rgb(255, 205, 86)',
+              'rgb(110, 108, 192)',
+              'rgb(252, 69, 69)',
+              'rgb(15, 80, 75)',
             ],
             hoverOffset: 2,
           },
@@ -56,33 +73,42 @@ export class GraficoComponent implements OnChanges {
       },
     });
   }
-  private updateChart2() {
-    if (this.chart2) {
-      this.chart2.destroy();
+  private updateChartBar() {
+    if (this.chartBar) {
+      this.chartBar.destroy();
     }
-
-    const ctx = document.getElementById('graficoGastos') as HTMLCanvasElement;
-    this.chart2 = new Chart(ctx, {
-      type: 'doughnut',
+    const ctx = document.getElementById('graficoBar') as HTMLCanvasElement;
+    this.chartBar = new Chart(ctx, {
+      type: 'bar',
       data: {
-        labels: this.labelsOfGastos,
+        labels: [
+          ...(this.labelsOfIngresos ?? []),
+          ...(this.labelsOfGastos ?? []),
+          'Ahorro',
+        ],
         datasets: [
           {
-            label: 'Gastos',
-            data: this.valuesOfGastos,
-            backgroundColor: [
-              'rgb(255, 99, 132)',
-              'rgb(54, 162, 235)',
-              'rgb(255, 205, 86)',
+            label: 'Monto',
+            data: [
+              ...(this.valuesOfIngresos ?? []),
+              ...(this.valuesOfGastos ?? []),
+              this.resultadoEnd,
             ],
-            hoverOffset: 2,
+            backgroundColor: [
+              'rgb(110, 108, 192)',
+              'rgb(252, 69, 69)',
+              'rgb(15, 80, 75)',
+              'rgb(110, 108, 192)',
+              'rgb(252, 69, 69)',
+              'rgb(15, 80, 75)',
+            ],
           },
         ],
       },
       options: {
         plugins: {
           legend: {
-            position: 'bottom', // Coloca las etiquetas debajo del gráfico
+            display: false, // Esto quita las etiquetas de ingreso y gasto
           },
         },
       },
