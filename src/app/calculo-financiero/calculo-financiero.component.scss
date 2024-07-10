@@ -1,0 +1,9 @@
+.suspensivo {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 8.8rem;
+}
+.scrollabe::-webkit-scrollbar {
+    width: 1px;
+} 

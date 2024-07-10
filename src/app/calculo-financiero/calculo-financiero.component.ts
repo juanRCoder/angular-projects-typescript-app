@@ -37,9 +37,9 @@ export class CalculoFinancieroComponent {
   showChart?: boolean = false;
 
   formulario: FormGroup = this.fb.group({
-    mensual: [0],
+    mensual: [''],
     ingresos: this.fb.array([]),
-    insumoDiario: [0],
+    insumoDiario: [''],
     gastos: this.fb.array([]),
   });
 
@@ -53,24 +53,19 @@ export class CalculoFinancieroComponent {
   addIngreso() {
     const addIngreso = this.fb.group({
       newIngreso: '',
-      newValor: 0,
+      newValor: '',
     });
     this.ingresos().push(addIngreso);
   }
   addGasto() {
     const addGasto = this.fb.group({
       newGasto: '',
-      newValor: 0,
+      newValor: '',
     });
     this.gastos().push(addGasto);
   }
 
-  private process(
-    array: FormArray,
-    newLabel: string,
-    newValue: string,
-    labelStatic: string
-  ) {
+  private process(array: FormArray, newLabel: string, newValue: string, labelStatic: string) {
     let labels: string[] = [];
     let values: number[] = [];
 
@@ -91,29 +86,17 @@ export class CalculoFinancieroComponent {
     const ingresosArray = this.formulario.get('ingresos') as FormArray;
     const gastosArray = this.formulario.get('gastos') as FormArray;
 
-    const ingreso = this.process(
-      ingresosArray,
-      'newIngreso',
-      'newValor',
-      'mensual'
-    );
+    const ingreso = this.process(ingresosArray,'newIngreso','newValor','mensual');
     this.data.ingresos.label = ingreso.labels;
     this.data.ingresos.value = ingreso.values;
     this.data.ingresos.suma = ingreso.values.reduce((acml, x) => acml + x)
 
-    const gasto = this.process(
-      gastosArray,
-      'newGasto',
-      'newValor',
-      'insumoDiario'
-    );
+    const gasto = this.process(gastosArray,'newGasto','newValor','insumoDiario');
     this.data.gastos.label = gasto.labels;
     this.data.gastos.value = gasto.values;
     this.data.gastos.suma = gasto.values.reduce((acml, x) => acml + x)
 
     this.resultEnd = this.data.ingresos.suma - this.data.gastos.suma;
-    console.log( this.data.ingresos.suma)
-    console.log( this.data.gastos.suma)
 
     this.showChart = true;
   }

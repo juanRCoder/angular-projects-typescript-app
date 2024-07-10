@@ -1,80 +1,161 @@
-<form
-  [formGroup]="formulario"
-  (ngSubmit)="onSubmit()"
-  class="h-full p-5 text-white"
->
-  <h1>INGRESOS</h1>
-  <section>
-    <div class="mb-5">
-      <label class="text-white pr-5">Mensual</label>
-      <input
-        class="bg-white/5 outline-none border-none"
-        type="number"
-        formControlName="mensual"
-      />
-    </div>
-    <div formArrayName="ingresos">
-      @for (input of ingresos().controls; track input; let i= $index) {
-      <div [formGroupName]="i" class="mb-5">
-        <input
-          class="placeholder:text-slate-600 mr-10 mb-5 text-white pr-5 bg-slate-600"
-          formControlName="newIngreso"
-          type="text"
-          placeholder="nuevo ingreso"
-        />
-        <input class="text-black" formControlName="newValor" type="number" />
-        <button class="ml-4 py-2 px-4 bg-red-400" (click)="removeIngreso(i)">
-          -
-        </button>
-      </div>
-      }
-    </div>
-    <div>
-      <button type="button" (click)="addIngreso()">Add Ingreso</button>
-    </div>
-  </section>
-  <br />
-  <h1>GASTOS</h1>
-  <section>
-    <div class="mb-5">
-      <label class="text-white pr-5">insumos Diarios</label>
-      <input
-        class="bg-white/5 outline-none border-none"
-        type="number"
-        formControlName="insumoDiario"
-      />
-    </div>
-    <div formArrayName="gastos">
-      @for (input of gastos().controls; track input; let i= $index) {
-      <div [formGroupName]="i" class="mb-5">
-        <input
-          class="placeholder:text-slate-600 mr-10 mb-5 text-white pr-5 bg-slate-600"
-          formControlName="newGasto"
-          type="text"
-          placeholder="nuevo ingreso"
-        />
-        <input class="text-black" formControlName="newValor" type="number" />
-        <button class="ml-4 py-2 px-4 bg-red-400" (click)="removeGasto(i)">
-          -
-        </button>
-      </div>
-      }
-    </div>
-    <div>
-      <button type="button" (click)="addGasto()">Add Gasto</button>
-    </div>
-  </section>
+<main class="bg-white flex flex-col">
+  <section class="md:scrollabe md:overflow-hidden md:overflow-y-auto min-h-screen bg-slate-100 font-DMSans">
+    <h1 class="mt-4 text-teal-900 text-center text-2xl font-bold p-2 rounded-lg md:bg-slate-200">
+      CALCULO FINANCIERO
+    </h1>
+    <form
+      [formGroup]="formulario"
+      (ngSubmit)="onSubmit()"
+      class="px-2 mt-5 w-full"
+    >
+      <h1 class="text-teal-900 font-semibold">INGRESOS</h1>
+      <section class="sm:max-w-96 w-full bg-slate-200 mt-4 p-4 rounded-lg">
+        <div class="flex flex-col justify-start">
+          <input
+            class="text-teal-900 font-medium pb-2"
+            value="Mensual"
+            disabled
+          />
+          <div class="flex gap-3">
+            <input
+              class="w-full rounded-md placeholder:text-gray-500 text-neutral-800 px-3 py-1 bg-white outline-none border-none"
+              type="number"
+              formControlName="mensual"
+              placeholder="0"
+            />
+            <div class="rounded-full grid place-items-center bg-slate-100">
+              <button type="button" class="scale-75 cursor-default">
+                <img
+                  class="bg-transparent h-full w-full object-cover"
+                  src="../../assets/calculo/minus-hidden.png"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+        <div formArrayName="ingresos">
+          @for (input of ingresos().controls; track input; let i= $index) {
+          <div
+            [formGroupName]="i"
+            class="flex flex-col justify-start gap-2 mt-2"
+          >
+            <input
+              class="text-teal-900 font-medium rounded-md pl-2 py-1 outline-none border-none"
+              formControlName="newIngreso"
+              type="text"
+              placeholder="ingreso"
+            />
+            <div class="flex gap-3">
+              <input
+                class="w-full rounded-md placeholder:text-gray-500 text-neutral-800 px-3 py-1 bg-white outline-none border-none"
+                formControlName="newValor"
+                type="number"
+                placeholder="0"
+              />
+              <div class="rounded-full grid place-items-center bg-red-400 hover:bg-red-400/75">
+                <button class="scale-75" (click)="removeIngreso(i)">
+                  <img
+                    class="h-full w-full object-cover"
+                    src="../../assets/calculo/minus.png"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+          }
+        </div>
+        <div class="rounded-full w-8 h-8 grid place-items-center mt-5 bg-teal-900/75">
+          <button class="p-2" type="button" (click)="addIngreso()">
+            <img
+              class="h-full w-full object-cover"
+              src="../../assets/calculo/plus.png"
+            />
+          </button>
+        </div>
+      </section>
+      <br />
+      <h1 class="text-teal-900 font-semibold">GASTOS</h1>
+      <section class="sm:max-w-96 bg-slate-200 mt-4 p-5 rounded-lg">
+        <div class="flex flex-col justify-start">
+          <input
+            class="text-teal-900 font-medium pb-2"
+            value="Insumos"
+            disabled
+          />
+          <div class="flex gap-3">
+            <input
+              class="w-full rounded-md placeholder:text-gray-500 text-neutral-800 px-3 py-1 bg-white outline-none border-none"
+              type="number"
+              formControlName="insumoDiario"
+              placeholder="0"
+            />
+            <div class="rounded-full grid place-items-center bg-slate-100">
+              <button type="button" class="scale-75 cursor-default">
+                <img
+                  class="bg-transparent h-full w-full object-cover"
+                  src="../../assets/calculo/minus-hidden.png"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+        <div formArrayName="gastos">
+          @for (input of gastos().controls; track input; let i= $index) {
+          <div
+            [formGroupName]="i"
+            class="flex flex-col justify-start gap-2 mt-2"
+          >
+            <input
+              class="text-teal-900 font-medium rounded-md pl-2 py-1 outline-none border-none"
+              formControlName="newGasto"
+              type="text"
+              placeholder="gasto"
+            />
+            <div class="flex gap-3">
+              <input
+                class="w-full rounded-md placeholder:text-gray-500 text-neutral-800 px-3 py-1 bg-white outline-none border-none"
+                formControlName="newValor"
+                type="number"
+                placeholder="0"
+              />
+              <div class="rounded-full grid place-items-center bg-red-400 hover:bg-red-400/75">
+                <button class="scale-75" (click)="removeGasto(i)">
+                  <img
+                    class="h-full w-full object-cover"
+                    src="../../assets/calculo/minus.png"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+          }
+        </div>
+        <div class="rounded-full w-8 h-8 grid place-items-center mt-5 bg-teal-900/75">
+          <button class="p-2" type="button" (click)="addGasto()">
+            <img
+              class="h-full w-full object-cover"
+              src="../../assets/calculo/plus.png"
+            />
+          </button>
+        </div>
+      </section>
 
-  <button class="bg-slate-400 rounded-lg outline-none text-white mt-2 p-1 px-4">
-    Resultados
-  </button>
-</form>
-@if (showChart) {
-<app-grafico
-  [labelsOfIngresos]="data.ingresos.label"
-  [valuesOfIngresos]="data.ingresos.value"
-  [labelsOfGastos]="data.gastos.label"
-  [valuesOfGastos]="data.gastos.value"
-  [resultadoEnd]="this.resultEnd"
-></app-grafico>
-}
+      <button
+        class="mb-10 transition hover:bg-teal-900/90 bg-teal-900 rounded-md w-full py-2 text-xl outline-none text-white mt-5"
+      >
+        Resultados
+      </button>
+    </form>
+  </section>
+  <div class="cajaMayor flex-grow">
+    @if (showChart) {
+    <app-grafico
+      [labelsOfIngresos]="data.ingresos.label"
+      [valuesOfIngresos]="data.ingresos.value"
+      [labelsOfGastos]="data.gastos.label"
+      [valuesOfGastos]="data.gastos.value"
+      [resultadoEnd]="this.resultEnd"
+    ></app-grafico>
+    }
+  </div>
+</main>

@@ -1,18 +1,18 @@
 import {
   Component,
-  input,
   Input,
   OnChanges,
   SimpleChanges,
 } from '@angular/core';
 import Chart from 'chart.js/auto';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-grafico',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './grafico.component.html',
-  // styleUrl: './grafico.component.scss'
+  styleUrl: './grafico.component.scss'
 })
 export class GraficoComponent implements OnChanges {
   @Input() labelsOfIngresos?: string[];
@@ -20,7 +20,7 @@ export class GraficoComponent implements OnChanges {
   @Input() labelsOfGastos?: string[];
   @Input() valuesOfGastos?: number[];
 
-  @Input() resultadoEnd?: number;
+  @Input() resultadoEnd?: number = 120;
   private chartCircle?: Chart | any;
   private chartBar?: Chart | any;
 
@@ -56,9 +56,9 @@ export class GraficoComponent implements OnChanges {
             label: 'general',
             data: [this.ingressTotal, this.gastossTotal, this.resultadoEnd],
             backgroundColor: [
-              'rgb(110, 108, 192)',
-              'rgb(252, 69, 69)',
-              'rgb(15, 80, 75)',
+              'rgb(19 78 74)',
+              'rgb(239 68 68)',
+              'rgb(37 99 235)',
             ],
             hoverOffset: 2,
           },
@@ -67,7 +67,7 @@ export class GraficoComponent implements OnChanges {
       options: {
         plugins: {
           legend: {
-            position: 'bottom', // Coloca las etiquetas debajo del gráfico
+            position: 'right', // Coloca las etiquetas debajo del gráfico
           },
         },
       },
@@ -95,12 +95,15 @@ export class GraficoComponent implements OnChanges {
               this.resultadoEnd,
             ],
             backgroundColor: [
-              'rgb(110, 108, 192)',
-              'rgb(252, 69, 69)',
-              'rgb(15, 80, 75)',
-              'rgb(110, 108, 192)',
-              'rgb(252, 69, 69)',
-              'rgb(15, 80, 75)',
+             'rgb(19 78 74)',
+              'rgb(239 68 68)',
+              'rgb(37 99 235)',
+              'rgb(19 78 74)',
+              'rgb(250 204 21)',
+              'rgb(37 99 235)',
+              'rgb(251 191 36))',
+              'rgb(13 148 136)',
+              'rgb(120 113 108)',
             ],
           },
         ],
