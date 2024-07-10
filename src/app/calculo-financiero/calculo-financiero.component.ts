@@ -6,6 +6,7 @@ import {
   FormArray,
 } from '@angular/forms';
 import { GraficoComponent } from './grafico/grafico.component';
+import { CommonModule } from '@angular/common';
 
 interface typeData {
   ingresos: {
@@ -23,7 +24,7 @@ interface typeData {
 @Component({
   selector: 'app-calculo-financiero',
   standalone: true,
-  imports: [ReactiveFormsModule, GraficoComponent],
+  imports: [ReactiveFormsModule, GraficoComponent, CommonModule],
   templateUrl: './calculo-financiero.component.html',
   styleUrl: './calculo-financiero.component.scss',
 })
