@@ -8,7 +8,7 @@
 - [Post-calculo-financiero](https://www.linkedin.com/feed/update/urn:li:activity:7216956512726859776/)
 
 ## Project View
-<img src="../../assets/calculo/calculo-financiero.webp" alt="Calculo Financiero" width="800" height="400" >
+<img src="../../assets/calculo/calculo-financiero.webp" alt="Calculo Financiero">
 
 <br/>
 
