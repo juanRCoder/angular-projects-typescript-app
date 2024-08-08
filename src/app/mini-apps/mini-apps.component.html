@@ -16,21 +16,4 @@
       }
     </div>
   </div>
-  <div class="block1">
-    <div class="header">
-      <img
-        src="../../assets/angular_icon.webp"
-        title="iconAngular"
-        alt="iconAngular.webp"
-      />
-      <h1 class="header_title">web pages-sites</h1>
-    </div>
-    <div class="mainApp">
-      @for (page of pages; track page.name) {
-      <div routerLink="{{ page.link }}" class="mainApp_container">
-        <h2>{{ page.name }}</h2>
-      </div>
-      }
-    </div>
-  </div>
 </section>

@@ -14,7 +14,4 @@ export class MiniAppsComponent {
     { name: 'Translate-app', link: 'translate-app',},
     { name: 'calculo-financiero', link: 'calculo-financiero'}
   ];
-  pages = [
-    { name: '??', link: '??', icon: '../../assets/icons/solv-think.webp' },
-  ];
 }
